@@ -9,7 +9,7 @@ import time
 import random
 from datetime import datetime
 
-C2_SERVER = "http://192.168.56.10:8080"
+C2_SERVER = "http://192.168.56.10:8070"
 BEACON_INTERVAL = 10  # seconds
 JITTER_PERCENT = 10   # 10% jitter
 

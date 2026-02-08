@@ -34,5 +34,5 @@ def send_command():
     return json.dumps({"cmd": "nop", "sleep": 10})
 
 if __name__ == "__main__":
-    print("C2 Server starting on 192.168.56.10:8080")
-    app.run(host='0.0.0.0', port=8080, debug=False)
+    print("C2 Server starting on 192.168.56.10:8070")
+    app.run(host='0.0.0.0', port=8070, debug=False)
