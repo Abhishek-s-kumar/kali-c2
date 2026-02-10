@@ -1,0 +1,15 @@
+# Logging Configuration
+# Enable console logging to file
+spool /home/kali/Desktop/c2/msf-c2/console.log
+
+# Enable session logging (commands sent/received)
+setg SessionLogging true
+
+# Enable session transcript (full I/O recording)
+setg SessionTranscript true
+
+# Enable timestamp in logs
+setg PromptTimeFormat "%Y-%m-%d %H:%M:%S"
+setg Prompt "%T > "
+
+print_status "Logging enabled. Output saved to console.log and ~/.msf4/logs/"
