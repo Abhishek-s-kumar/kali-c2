@@ -1,0 +1,16 @@
+# MSF-C2 Central Configuration
+# This script sets global variables for other resource scripts
+
+# Networking
+setg LHOST 10.0.2.15
+setg HTTP_PORT 8080
+setg HTTPS_PORT 8443
+setg TCP_PORT 4444
+
+# Beaconing Behavior
+# HttpWait: seconds to wait between connections
+# HttpCheckinMax: max times to check in before exiting (0 = infinite)
+setg HttpWait 30
+setg HttpCheckinMax 0
+
+# UI/Logging settings are in enable_logging.rc
