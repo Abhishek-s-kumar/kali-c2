@@ -2,7 +2,7 @@
 # This script sets global variables for other resource scripts
 
 # Networking
-setg LHOST 10.0.2.15
+setg LHOST 192.168.56.10
 setg HTTP_PORT 8080
 setg HTTPS_PORT 8443
 setg TCP_PORT 4444

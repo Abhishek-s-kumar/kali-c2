@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-LHOST="10.0.2.15"
+LHOST="192.168.56.10"
 HTTP_PORT="8080"
 HTTPS_PORT="8443"
 TCP_PORT="4444"
