@@ -10,6 +10,7 @@ setg TCP_PORT 4444
 # Beaconing Behavior
 # HttpWait: seconds to wait between connections
 # HttpCheckinMax: max times to check in before exiting (0 = infinite)
+# Note: Experiments use varying intervals (10s, 30s, 60s)
 setg HttpWait 30
 setg HttpCheckinMax 0
 
